@@ -1,0 +1,70 @@
+<ui:UXML xmlns:ui="UnityEngine.UIElements" editor-extension-mode="False">
+    <Style src="project://database/Assets/UI/MainStyle.uss?fileID=7433441132597879392&amp;guid=c936bc29698b13f33a7bc9ba5b1c8ea4&amp;type=3#MainStyle"/>
+    <ui:VisualElement name="root" class="root-container">
+        <ui:VisualElement name="header" class="header">
+            <ui:Label text="SteamPipe GUI" class="title-label"/>
+            <ui:Label name="status-label" text="Not connected" class="status-label"/>
+        </ui:VisualElement>
+        <ui:VisualElement name="main-layout" class="main-layout">
+            <ui:VisualElement name="sidebar" class="sidebar">
+                <ui:Button name="btn-login" text="🔐  Login" class="nav-button"/>
+                <ui:Button name="btn-build" text="🔨  Build" class="nav-button"/>
+                <ui:Button name="btn-settings" text="⚙   Settings" class="nav-button nav-button--bottom"/>
+            </ui:VisualElement>
+            <ui:VisualElement name="content-area" class="content-area">
+                <ui:VisualElement name="banner-no-steamcmd" class="banner banner--warn">
+                    <ui:Label text="⚠  steamcmd not found. Set the Steamworks SDK folder in Settings." class="banner-text"/>
+                    <ui:Button name="btn-banner-go-settings" text="Settings →" class="banner-button"/>
+                </ui:VisualElement>
+                <ui:VisualElement name="panel-login" class="panel">
+                    <ui:Label text="Steam Login" class="panel-title"/>
+                    <ui:TextField name="field-username" label="Username" class="input-field"/>
+                    <ui:TextField name="field-password" label="Password" password="true" class="input-field"/>
+                    <ui:TextField name="field-steamguard" label="Steam Guard (if required)" class="input-field"/>
+                    <ui:VisualElement class="button-row">
+                        <ui:Button name="btn-do-login" text="Login" class="primary-button"/>
+                        <ui:Button name="btn-do-logout" text="Logout" class="secondary-button"/>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+                <ui:VisualElement name="panel-build" class="panel">
+                    <ui:Label text="Build &amp; Upload" class="panel-title"/>
+                    <ui:TextField name="field-appid" label="App ID" class="input-field"/>
+                    <ui:TextField name="field-build-desc" label="Build description" class="input-field"/>
+                    <ui:VisualElement class="field-with-button">
+                        <ui:TextField name="field-content-path" label="Content folder" class="input-field input-field--grow"/>
+                        <ui:Button name="btn-browse-path" text="Browse..." class="secondary-button secondary-button--inline"/>
+                    </ui:VisualElement>
+                    <ui:DropdownField name="dropdown-branch" label="Branch" class="input-field"/>
+                    <ui:Toggle name="toggle-live" label="Set live after upload" class="toggle-field"/>
+                    <ui:Button name="btn-start-build" text="Start build" class="primary-button"/>
+                </ui:VisualElement>
+                <ui:VisualElement name="panel-settings" class="panel">
+                    <ui:Label text="Settings" class="panel-title"/>
+                    <ui:Label text="Steamworks SDK" class="settings-section-label"/>
+                    <ui:VisualElement class="field-with-button">
+                        <ui:TextField name="field-sdk-folder" label="SDK folder" class="input-field input-field--grow"/>
+                        <ui:Button name="btn-browse-sdk" text="Browse..." class="secondary-button secondary-button--inline"/>
+                    </ui:VisualElement>
+                    <ui:Label name="label-steamcmd-resolved" text="" class="hint-label"/>
+                    <ui:Label text="Or direct path to steamcmd.sh" class="settings-section-label settings-section-label--minor"/>
+                    <ui:VisualElement class="field-with-button">
+                        <ui:TextField name="field-steamcmd-path" label="steamcmd.sh" class="input-field input-field--grow"/>
+                        <ui:Button name="btn-browse-steamcmd" text="Browse..." class="secondary-button secondary-button--inline"/>
+                    </ui:VisualElement>
+                    <ui:Label text="Other" class="settings-section-label"/>
+                    <ui:TextField name="field-log-lines" label="Max log lines" value="500" class="input-field"/>
+                    <ui:VisualElement class="button-row">
+                        <ui:Button name="btn-save-settings" text="Save" class="primary-button"/>
+                        <ui:Button name="btn-clear-log" text="Clear log" class="secondary-button"/>
+                    </ui:VisualElement>
+                </ui:VisualElement>
+            </ui:VisualElement>
+        </ui:VisualElement>
+        <ui:VisualElement name="log-area" class="log-area">
+            <ui:Label text="OUTPUT" class="log-title"/>
+            <ui:ScrollView name="log-scroll" class="log-scroll">
+                <ui:Label name="log-output" text="Ready." class="log-output"/>
+            </ui:ScrollView>
+        </ui:VisualElement>
+    </ui:VisualElement>
+</ui:UXML>

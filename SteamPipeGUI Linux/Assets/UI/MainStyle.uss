@@ -1,0 +1,244 @@
+.root-container {
+    flex-direction: column;
+    flex-grow: 1;
+    background-color: rgb(26, 26, 46);
+    color: rgb(224, 224, 224);
+}
+
+.header {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 20px;
+    background-color: rgb(22, 33, 62);
+    border-bottom-width: 1px;
+    border-bottom-color: rgb(15, 52, 96);
+}
+
+.title-label {
+    font-size: 20px;
+    color: rgb(0, 212, 255);
+    -unity-font-style: bold;
+}
+
+.status-label {
+    font-size: 12px;
+    color: rgb(136, 136, 136);
+}
+
+.main-layout {
+    flex-direction: row;
+    flex-grow: 1;
+}
+
+.sidebar {
+    width: 180px;
+    background-color: rgb(22, 33, 62);
+    padding: 10px 8px;
+    border-right-width: 1px;
+    border-right-color: rgb(15, 52, 96);
+    flex-direction: column;
+}
+
+.nav-button {
+    margin-bottom: 4px;
+    padding: 10px 14px;
+    background-color: transparent;
+    border-width: 0;
+    border-radius: 6px;
+    color: rgb(170, 170, 170);
+    -unity-text-align: middle-left;
+    font-size: 13px;
+    transition: background-color 0.15s;
+}
+
+.nav-button:hover {
+    background-color: rgb(28, 48, 89);
+    color: rgb(255, 255, 255);
+}
+
+.nav-button--active {
+    background-color: rgb(15, 52, 96);
+    color: rgb(0, 212, 255);
+}
+
+.nav-button--bottom {
+    margin-top: auto;
+}
+
+.content-area {
+    flex-grow: 1;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.banner {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    border-bottom-width: 1px;
+}
+
+.banner--warn {
+    background-color: rgb(46, 31, 0);
+    border-bottom-color: rgb(122, 74, 0);
+}
+
+.banner--error {
+    background-color: rgb(46, 0, 0);
+    border-bottom-color: rgb(122, 0, 0);
+}
+
+.banner-text {
+    font-size: 13px;
+    color: rgb(255, 170, 51);
+    flex-grow: 1;
+}
+
+.banner-button {
+    padding: 6px 16px;
+    background-color: rgb(122, 74, 0);
+    border-color: rgb(255, 170, 51);
+    border-width: 1px;
+    border-radius: 4px;
+    color: rgb(255, 170, 51);
+    font-size: 12px;
+    -unity-font-style: bold;
+    margin-left: 12px;
+}
+
+.banner-button:hover {
+    background-color: rgb(255, 170, 51);
+    color: rgb(26, 26, 46);
+}
+
+.panel {
+    flex-direction: column;
+    padding: 24px;
+    max-width: 560px;
+}
+
+.panel-title {
+    font-size: 18px;
+    color: rgb(0, 212, 255);
+    margin-bottom: 20px;
+    -unity-font-style: bold;
+}
+
+.input-field {
+    margin-bottom: 12px;
+    color: rgb(224, 224, 224);
+}
+
+.input-field > Label {
+    min-width: 160px;
+    color: rgb(170, 170, 170);
+    -unity-text-align: middle-left;
+}
+
+.input-field > #unity-text-input {
+    background-color: rgb(13, 27, 42);
+    border-color: rgb(42, 64, 96);
+    border-radius: 4px;
+    color: rgb(224, 224, 224);
+}
+
+.input-field > #unity-text-input:focus {
+    border-color: rgb(0, 212, 255);
+}
+
+.input-field--grow {
+    flex-grow: 1;
+    margin-bottom: 0;
+}
+
+.toggle-field {
+    margin-bottom: 12px;
+    color: rgb(170, 170, 170);
+}
+
+.field-with-button {
+    flex-direction: row;
+    align-items: flex-end;
+    margin-bottom: 12px;
+}
+
+.button-row {
+    flex-direction: row;
+    margin-top: 16px;
+}
+
+.primary-button {
+    padding: 11px 28px;
+    background-color: rgb(15, 52, 96);
+    border-color: rgb(0, 212, 255);
+    border-width: 1px;
+    border-radius: 6px;
+    color: rgb(0, 212, 255);
+    font-size: 13px;
+    -unity-font-style: bold;
+    margin-right: 8px;
+    transition: background-color 0.15s;
+}
+
+.primary-button:hover {
+    background-color: rgb(0, 212, 255);
+    color: rgb(26, 26, 46);
+}
+
+.primary-button:disabled {
+    opacity: 0.4;
+}
+
+.secondary-button {
+    padding: 9px 18px;
+    background-color: transparent;
+    border-color: rgb(68, 85, 102);
+    border-width: 1px;
+    border-radius: 6px;
+    color: rgb(170, 170, 170);
+    font-size: 13px;
+    margin-right: 8px;
+    transition: border-color 0.15s;
+}
+
+.secondary-button:hover {
+    border-color: rgb(0, 212, 255);
+    color: rgb(255, 255, 255);
+}
+
+.secondary-button--inline {
+    margin-left: 8px;
+    margin-bottom: 0;
+    align-self: flex-end;
+    height: 28px;
+    padding: 0 14px;
+}
+
+.log-area {
+    height: 350px;
+    background-color: rgb(13, 17, 23);
+    border-top-width: 1px;
+    border-top-color: rgb(15, 52, 96);
+    padding: 6px 14px 8px;
+    flex-direction: column;
+}
+
+.log-title {
+    font-size: 15px;
+    color: rgb(68, 85, 102);
+    margin-bottom: 4px;
+    -unity-font-style: bold;
+    letter-spacing: 1.5px;
+}
+
+.log-scroll {
+    flex-grow: 1;
+}
+
+.log-output {
+    font-size: 16px;
+    color: rgb(136, 204, 136);
+    white-space: normal;
+}
