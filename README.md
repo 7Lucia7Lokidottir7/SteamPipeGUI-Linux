@@ -9,6 +9,9 @@ Built with Unity + UI Toolkit.
 
 ---
 
+<img width="955" height="734" alt="image_2026-02-23_16-01-15" src="https://github.com/user-attachments/assets/da364fdd-e808-469c-86dc-199f4b292308" />
+
+
 ## Features
 
 - Login to Steam with Mobile Authenticator support
