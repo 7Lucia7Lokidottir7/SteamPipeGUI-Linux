@@ -296,8 +296,9 @@ class MainWindow(QMainWindow):
 
     def do_build(self):
         app_id = self.f_appid.text().strip()
-        depot_id = self.f_appdepot.text().strip() # Может быть пустым
+        depot_id = self.f_appdepot.text().strip() 
         content = self.f_content.text().strip()
+        password = self.f_pass.text() # Changed: Retrieve password from the input field
 
         if not app_id or not content:
             self.append_log("[ERROR] App ID and Content folder are required.")
@@ -306,11 +307,12 @@ class MainWindow(QMainWindow):
         self.btn_build.setEnabled(False)
         self.steam.build(
             app_id,
-            depot_id, # Передаем (даже если пустая строка)
+            depot_id, 
             self.f_desc.text().strip(),
             content,
             self.cb_branch.currentText(),
-            self.chk_live.isChecked()
+            self.chk_live.isChecked(),
+            password=password # Changed: Pass the password argument
         )
         self.btn_build.setEnabled(True)
 
@@ -320,7 +322,7 @@ class MainWindow(QMainWindow):
     def update_login_ui(self, is_logged_in):
         self.btn_login.setVisible(not is_logged_in)
         self.btn_logout.setVisible(is_logged_in)
-        self.f_pass.clear()
+        #self.f_pass.clear()
         self.f_guard.clear()
 
     def append_log(self, text):

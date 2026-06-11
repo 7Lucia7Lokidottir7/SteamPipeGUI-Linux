@@ -61,7 +61,8 @@ class SteamCmdWrapper(QObject):
 
         self.process.start(self.steamcmd_path, args)
 
-    def build(self, app_id, depot_id, desc, content_path, branch, set_live):
+    # Changed: Added password parameter to build method
+    def build(self, app_id, depot_id, desc, content_path, branch, set_live, password=None):
         if not self.is_logged_in:
             self.log("[ERROR] Please log in first.")
             return
@@ -75,7 +76,13 @@ class SteamCmdWrapper(QObject):
 
         self.current_action = "build"
         self.status_changed.emit("Uploading...")
-        args = ["+login", self.logged_in_user, "+run_app_build", vdf_path, "+quit"]
+        
+        # Changed: Pass password if it is available to prevent prompt hangs
+        if password:
+            args = ["+login", self.logged_in_user, password, "+run_app_build", vdf_path, "+quit"]
+        else:
+            args = ["+login", self.logged_in_user, "+run_app_build", vdf_path, "+quit"]
+            
         self.process.start(self.steamcmd_path, args)
 
     def logout(self):

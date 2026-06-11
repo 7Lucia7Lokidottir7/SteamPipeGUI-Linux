@@ -1,9 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(cd \"/home/lucial/Git Projects/steam-pipe-gui\" && makepkg --noinstall 2>&1)",
-      "Bash(cd \"/home/lucial/Git Projects/steam-pipe-gui\" && makepkg --nobuild 2>&1)",
-      "Bash(cd \"/home/lucial/Git Projects/steam-pipe-gui\" && makepkg -f 2>&1)"
-    ]
-  }
-}
